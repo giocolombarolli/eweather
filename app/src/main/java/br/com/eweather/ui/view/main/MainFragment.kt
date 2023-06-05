@@ -1,4 +1,4 @@
-package br.com.eweather
+package br.com.eweather.ui.view.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

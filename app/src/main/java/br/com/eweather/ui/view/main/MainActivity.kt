@@ -1,4 +1,4 @@
-package br.com.eweather.mainactivity
+package br.com.eweather.ui.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
