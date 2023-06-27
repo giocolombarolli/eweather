@@ -48,6 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     //Navigation
+
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
     // Feature module Support
@@ -59,4 +60,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     // Timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
 }
