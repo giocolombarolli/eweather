@@ -14,9 +14,10 @@ import timber.log.Timber
 
 class HomeFragment : Fragment(R.layout.fragment_main) {
     private lateinit var binding: FragmentMainBinding
-
-    private val viewModel by viewModels<HomeViewModel>()
-
+    private val viewModel: HomeViewModel by viewModels()
+    private val latitude = -233.5502949
+    private val longitude = -16.7770339
+    private val key = "4151515525125dwdsdz"
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMainBinding.bind(view)
@@ -25,7 +26,10 @@ class HomeFragment : Fragment(R.layout.fragment_main) {
         super.onCreate(savedInstanceState)
         CoroutineScope(Dispatchers.IO).launch {
             Timber.i("Chamando o getCurrentTemperature!!!")
-            viewModel.getCurrentTemperature()
+            viewModel.getCurrentTemperature(latitude, longitude, key)
+            viewModel.weatherData.observe(viewLifecycleOwner) { weatherData ->
+                binding.locationTxt.text = weatherData.weather.toString()
+            }
         }
     }
 
